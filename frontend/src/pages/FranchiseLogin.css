@@ -1,0 +1,221 @@
+.franchise-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.franchise-login-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.franchise-logo {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.franchise-logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+.franchise-login-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 48px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.franchise-login-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.franchise-login-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  text-align: center;
+  margin: 0 0 32px 0;
+  font-weight: 400;
+}
+
+.franchise-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: -0.2px;
+}
+
+.form-input {
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1f2937;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+  font-family: inherit;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #363795;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(54, 55, 149, 0.1);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Error Message */
+.error-message {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #fecaca;
+  text-align: center;
+}
+
+/* Loading States */
+.franchise-login-btn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Disabled States */
+.form-input:disabled,
+.password-toggle:disabled,
+.forgot-password:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #6b7280;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover:not(:disabled) {
+  color: #374151;
+}
+
+.forgot-password {
+  background: none;
+  border: none;
+  color: #363795;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: right;
+  transition: color 0.2s;
+  padding: 8px 0;
+}
+
+.forgot-password:hover:not(:disabled) {
+  color: #005C97;
+  text-decoration: underline;
+}
+
+.franchise-login-btn {
+  background: linear-gradient(135deg, #363795 0%, #005C97 100%);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(54, 55, 149, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.franchise-login-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(54, 55, 149, 0.4);
+}
+
+.franchise-login-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .franchise-login-page {
+    padding: 10px;
+  }
+  
+  .franchise-login-card {
+    padding: 32px 24px;
+  }
+  
+  .franchise-login-title {
+    font-size: 1.75rem;
+  }
+  
+  .franchise-logo img {
+    max-width: 150px;
+  }
+}

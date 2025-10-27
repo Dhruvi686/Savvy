@@ -1,0 +1,197 @@
+/* Shared variables */
+:root{
+  --page-bg: #f7f9fc;
+  --card-bg: #ffffff;
+  --muted: #666;
+  --text: #1f2a44;
+  --accent1: rgba(25,118,210,0.85);
+  --accent2: rgba(3,169,244,0.85);
+  --card-shadow: 0 18px 32px -12px rgba(15,70,140,0.25);
+}
+
+/* Page containers */
+.ongoing-projects-page,
+.completed-projects-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--page-bg);
+  color: var(--text);
+}
+
+/* Page inner wrapper (alternate name) */
+.ongoing-page {
+  padding: 40px;
+  background: #f7f8fa;
+  color: #222;
+}
+
+/* Hero / header */
+.ongoing-hero,
+.completed-hero {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: #ffffff;
+  padding: 4rem 0 3rem;
+  text-align: left;
+}
+
+.breadcrumb {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  max-width: 640px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Content areas */
+.ongoing-content,
+.completed-content {
+  flex: 1;
+  padding: 3rem 0 4rem;
+}
+
+/* Grid (keeps both variants centered) */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center; /* center cards horizontally on the page */
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;          /* center the whole grid */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card base styles */
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(25,118,210,0.08);
+  width: 320px;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Hover */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 36px -16px rgba(15,70,140,0.35);
+}
+
+/* Alternate (older lower-elevation card) */
+.project-card.flat {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 16px;
+}
+
+/* Image placeholder / banner inside card */
+.project-image {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, rgba(25,118,210,0.6), rgba(3,169,244,0.6));
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Header inside card */
+.card-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.project-title,
+.project-name {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #155293;
+  margin: 0;
+}
+
+.project-year,
+.project-meta {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+/* Details */
+.project-details {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center; /* center detail rows */
+}
+
+.detail-item {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-item dt,
+.detail-item dd {
+  text-align: center;
+  margin: 0;
+}
+
+/* Completed project specific tweaks */
+.completed-projects-page .project-card {
+  width: 360px; /* slightly wider cards for completed page */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .project-card { width: 48%; max-width: 420px; }
+  .completed-projects-page .project-card { width: 48%; }
+}
+
+@media (max-width: 768px) {
+  .ongoing-hero,
+  .completed-hero {
+    padding: 3.5rem 0 2.5rem;
+    text-align: center;
+  }
+  .hero-title { font-size: 2.25rem; }
+  .hero-subtitle { margin: 0 auto; }
+  .project-card { width: 100%; max-width: 600px; }
+  .projects-grid { padding: 0 12px; }
+}
+
+@media (max-width: 576px) {
+  .project-card { padding: 1.5rem; }
+  .project-title { font-size: 1.2rem; }
+  .detail-item dd { font-size: 0.95rem; }
+}

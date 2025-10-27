@@ -1,0 +1,768 @@
+.top-bar {
+  background: #4b2577;
+  color: #fff;
+  padding: 11px 0;
+  font-size: 15px;
+}
+.top-bar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar button {
+  margin: 0 6px;
+  background: #b71c1c;
+  color: #fff;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Enhanced Carousel Styles */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.carousel-slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+
+.carousel-title {
+  display: inline-block;
+  background: #d32f2f;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.carousel-subtitle {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Carousel Navigation Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: 20px;
+}
+
+.carousel-next {
+  right: 20px;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  border: none;
+  background: transparent;
+  margin: 0 4px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+}
+
+.carousel-dot.active {
+  border: 2px solid #d32f2f;
+}
+
+.dot-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Responsive Design for Carousel */
+@media (max-width: 768px) {
+  .carousel {
+    height: 250px;
+  }
+  
+  .carousel-arrow {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  
+  .carousel-dots {
+    bottom: 10px;
+  }
+  
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .error-message {
+    margin-left: 10px;
+    padding: 6px 8px;
+  }
+  
+  .error-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 200px;
+  }
+  
+  .carousel-arrow {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+  
+  .logo-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .error-message {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
+.banner-section {
+  background: linear-gradient(90deg, #f7f8fa 60%, #e3e6f3 100%);
+  padding: 60px 0 40px 0;
+  text-align: center;
+}
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.banner-title {
+  display: inline-block;
+  background: #d32f2f;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+.banner-desc {
+  margin: 24px 0;
+  color: #333;
+  font-size: 18px;
+}
+.banner-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+.banner-logos img {
+  height: 80px;
+}
+
+.overview-section {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.overview-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: 34px;
+  color: #1f2b6c;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #4d5675;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.overview-card {
+  background: #f4f6fb;
+  padding: 32px 28px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(31, 43, 108, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.overview-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 160px;
+  height: 160px;
+  background: rgba(3, 169, 244, 0.12);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(31, 43, 108, 0.15);
+}
+
+.overview-card:hover::before {
+  transform: scale(1.2);
+}
+
+.card-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #03a9f4 0%, #3f51b5 100%);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.overview-card h3 {
+  font-size: 24px;
+  color: #1f2b6c;
+  margin-bottom: 16px;
+}
+
+.overview-card p {
+  font-size: 16px;
+  color: #5b6385;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.card-link {
+  font-weight: 600;
+  color: #03a9f4;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-link:hover {
+  color: #0288d1;
+}
+
+@media (max-width: 1024px) {
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-card {
+    padding: 28px 24px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+}
+
+.welcome-section {
+  background: #ffffff;
+  padding: 90px 0;
+}
+
+.content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-block;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  color: #03a9f4;
+  background: rgba(3, 169, 244, 0.12);
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.section-badge.accent {
+  color: #ff7043;
+  background: rgba(255, 112, 67, 0.12);
+}
+
+.welcome-title {
+  font-size: 40px;
+  color: #1f2b6c;
+  margin-bottom: 24px;
+}
+
+.welcome-text {
+  font-size: 17px;
+  color: #4d5675;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.ongoing-section {
+  background: #fff;
+  padding: 90px 0;
+}
+
+.section-subtitle.narrow {
+  max-width: 720px;
+}
+
+.projects-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 48px;
+}
+
+.project-card {
+  background: #f4f6fb;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 40px rgba(3, 169, 244, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 50px rgba(3, 169, 244, 0.12);
+}
+
+.project-card h3 {
+  font-size: 22px;
+  color: #1f2b6c;
+  margin-bottom: 14px;
+}
+
+.project-card p {
+  font-size: 15px;
+  color: #4d5675;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.project-status {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: rgba(3, 169, 244, 0.08);
+  color: #0288d1;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-section {
+  background: #f4f6fb;
+  padding: 90px 0;
+  color: #000;
+}
+
+.cta-section .section-title {
+  color: #000;
+}
+
+.team-section {
+  background: #ffffff;
+  padding: 90px 0;
+  color: #1f2b6c;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 48px;
+}
+
+.team-card {
+  background: #f4f6fb;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(31, 43, 108, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(31, 43, 108, 0.15);
+}
+
+.team-card h3 {
+  font-size: 22px;
+  color: #1f2b6c;
+  margin-bottom: 8px;
+}
+
+.team-qualification {
+  font-weight: 600;
+  color: #03a9f4;
+  margin-bottom: 12px;
+}
+
+.team-card p {
+  color: #4d5675;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 48px;
+}
+
+.cta-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 26px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-8px);
+  background: #e3e6f3;
+}
+
+.cta-card h3 {
+  color: #000;
+  font-size: 22px;
+}
+
+.cta-card p {
+  color: #000;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.cta-link {
+  color: #03a9f4;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-link::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.cta-link:hover::after {
+  transform: translateX(6px);
+}
+
+.courses-section {
+  background: #f1f4ff;
+  padding: 90px 0;
+}
+
+.courses-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 48px;
+  max-width: 560px;
+  box-shadow: 0 24px 48px rgba(3, 169, 244, 0.12);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(63, 81, 181, 0.12);
+}
+
+.course-category {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #3f51b5;
+  background: rgba(63, 81, 181, 0.14);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.course-card h3 {
+  font-size: 28px;
+  color: #1f2b6c;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.course-card p {
+  font-size: 16px;
+  color: #4d5675;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.course-nav {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: #03a9f4;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-nav:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 24px rgba(3, 169, 244, 0.3);
+}
+
+.course-dots {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.course-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(63, 81, 181, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.course-dot.active {
+  background: #3f51b5;
+  transform: scale(1.2);
+}
+
+@media (max-width: 992px) {
+  .projects-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courses-carousel {
+    gap: 18px;
+  }
+
+  .course-card {
+    padding: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 32px;
+  }
+
+  .projects-highlights,
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-section,
+  .ongoing-section,
+  .cta-section,
+  .team-section,
+  .courses-section {
+    padding: 70px 0;
+  }
+
+  .courses-carousel {
+    flex-direction: column;
+  }
+
+  .course-nav {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 576px) {
+  .course-card {
+    padding: 28px 24px;
+  }
+
+  .course-card h3 {
+    font-size: 24px;
+  }
+
+  .course-nav {
+    font-size: 20px;
+  }
+
+  .course-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
