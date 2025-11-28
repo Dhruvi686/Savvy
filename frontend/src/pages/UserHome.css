@@ -6,7 +6,7 @@
 }
 .top-bar-content {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;      
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,33 +24,38 @@
 
 /* Enhanced Carousel Styles */
 .carousel-container {
-  width: 100%;
-  overflow: hidden;
+  width: 100vw;                 /* fill viewport width */
+  max-width: none;
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;           /* center full-bleed container */
+  margin-right: -50vw;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .carousel {
-  position: relative;
-  width: 100%;
-  height: 400px;
+  width: 100vw;
+  max-width: none;
+  height: 60vh;                 /* increase height as needed */
+  min-height: 480px;
+  display: block;
 }
 
 .carousel-slides {
   display: flex;
-  width: 300%;
+  width: calc(100vw * 3);       /* if 3 slides; adjust *N if different */
   height: 100%;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
 .carousel-slide {
-  width: 100%;
-  height: 400px;
-  position: relative;
+  width: 100vw;        
+  height: 100%;
+  flex: 0 0 100vw;
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .carousel-overlay {
@@ -222,12 +227,14 @@
 
 .banner-section {
   background: linear-gradient(90deg, #f7f8fa 60%, #e3e6f3 100%);
-  padding: 60px 0 40px 0;
+  padding: 0; /* removed top space */
   text-align: center;
 }
 .banner-content {
   max-width: 1200px;
   margin: 0 auto;
+  /* optional: small inner top spacing — remove if you want zero spacing */
+  padding-top: 10px;
 }
 .banner-title {
   display: inline-block;
@@ -245,13 +252,81 @@
   font-size: 18px;
 }
 .banner-logos {
-  display: flex;
+  position: relative;
+  display: block;
   justify-content: center;
+  align-items: center;
   gap: 40px;
-  margin-top: 40px;
+  margin-top: 24px;
+  height: 60vh;            /* larger visual size on laptops/desktops */
+  max-height: 800px;       /* safety cap */
+  overflow: hidden;
 }
+
+/* stack images and animate opacity so they appear one-by-one */
 .banner-logos img {
-  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60vh;            /* increase logo size */
+  max-height: 800px;
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;       /* cover area while preserving aspect */
+  opacity: 0;
+  animation: bannerSlide 9s infinite;
+}
+
+/* timing: 3s visible per image (3 images -> 9s total) */
+.banner-logos img:nth-child(1) { animation-delay: 0s; }
+.banner-logos img:nth-child(2) { animation-delay: 3s; }
+.banner-logos img:nth-child(3) { animation-delay: 6s; }
+
+@keyframes bannerSlide {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.98); }
+  6%   { opacity: 1; transform: translate(-50%, -50%) scale(1); }   /* fade in */
+  30%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }   /* stay */
+  36%  { opacity: 0; transform: translate(-50%, -50%) scale(1.02);} /* fade out */
+  100% { opacity: 0; }
+}
+
+/* responsive tweaks */
+@media (max-width: 480px) {
+  .banner-logos { height: 100px; margin-top: 20px; }
+  .banner-logos img {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    height: 80px;
+    animation: none; /* keep small phones static */
+    opacity: 1;
+  }
+}
+
+/* responsive: reduce size on tablets / phones */
+@media (max-width: 1366px) {
+  .banner-logos { height: 50vh; }
+  .banner-logos img { height: 50vh; }
+}
+
+@media (max-width: 992px) {
+  .banner-logos { height: 40vh; }
+  .banner-logos img { height: 40vh; }
+}
+
+@media (max-width: 480px) {
+  .banner-logos { height: 100px; margin-top: 20px; }
+  .banner-logos img {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    height: 80px;
+    animation: none; /* keep small phones static */
+    opacity: 1;
+  }
 }
 
 .overview-section {
@@ -702,13 +777,21 @@
   transform: scale(1.2);
 }
 
+/* Fixed malformed responsive rules */
 @media (max-width: 992px) {
-  .projects-highlights {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .cta-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .projects-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .welcome-section,
+  .courses-section {
+    padding: 70px 0;
   }
 
   .courses-carousel {
@@ -725,44 +808,37 @@
     font-size: 32px;
   }
 
-  .projects-highlights,
-  .cta-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .welcome-section,
-  .ongoing-section,
-  .cta-section,
-  .team-section,
-  .courses-section {
-    padding: 70px 0;
-  }
-
   .courses-carousel {
     flex-direction: column;
   }
 
   .course-nav {
+    font-size: 20px;
     width: 46px;
     height: 46px;
-  }
-}
-
-@media (max-width: 576px) {
-  .course-card {
-    padding: 28px 24px;
-  }
-
-  .course-card h3 {
-    font-size: 24px;
-  }
-
-  .course-nav {
-    font-size: 20px;
   }
 
   .course-dot {
     width: 10px;
     height: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .course-card {
+    padding: 28px;
+  }
+
+  .banner-logos {
+    height: 120px;
+    margin-top: 16px;
+  }
+
+  .banner-logos img {
+    height: 100px;
+    animation: none;
+    opacity: 1;
+    position: relative;
+    transform: none;
   }
 }

@@ -78,13 +78,13 @@ const UserHome = () => {
       <div className="banner-section">
         <div className="banner-content">
           <h1 className="banner-title">DIGITAL KRANTI ABHIYAN</h1>
-          <div className="banner-desc">
+          {/* <div className="banner-desc">
             Savvy National Institute For Education And Skill Training Managed BY NIGT.
-          </div>
+          </div> */}
           <div className="banner-logos">
             <img src="slide1.jpg" alt="MSDE" />
-            <img src="slide1.jpg" alt="PMKVY" />
-            <img src="slide1.jpg" alt="Skill India" />
+            <img src="slide2.jpg" alt="PMKVY" />
+            <img src="slide3.jpg" alt="Skill India" />
           </div>
         </div>
       </div>
